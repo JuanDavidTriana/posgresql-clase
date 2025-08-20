@@ -1,5 +1,5 @@
-class Productos:
-    def __init__(self, id, nombre, descripcion, precio, precio_oferta,stock,categoria_id,img_url):
+class Producto:
+    def __init__(self, id, nombre, descripcion, precio, precio_oferta,stock,categoria_id):
         self.id = id
         self.nombre = nombre
         self.descripcion = descripcion
@@ -7,4 +7,14 @@ class Productos:
         self.precio_oferta = precio_oferta
         self.stock = stock
         self.categoria_id = categoria_id
-        self.img_url = img_url
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'nombre': self.nombre,
+            'descripcion': self.descripcion,
+            'precio': self.precio,
+            'precio_oferta': self.precio_oferta,
+            'stock': self.stock,
+            'categoria_id': self.categoria_id,
+        }
