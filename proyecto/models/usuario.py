@@ -9,6 +9,14 @@ class Usurios:
         self.telefono = telefono
         self.direccion = direccion
 
-    def __repr__(self):
-        return f"Usuario(id={self.id}, nombre={self.nombre}, apellido={self.apellido}, email={self.email}, fecha_nacimiento={self.fecha_nacimiento}, telefono={self.telefono}, direccion={self.direccion})"
-
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'nombre': self.nombre,
+            'apellido': self.apellido,
+            'email': self.email,
+            'password_hash': self.password_hash,
+            'fecha_nacimiento': self.fecha_nacimiento,
+            'telefono': self.telefono,
+            'direccion': self.direccion
+        }

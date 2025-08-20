@@ -7,3 +7,14 @@ class Pepidos:
         self.total = total
         self.direccion_envio = direccion_envio
         self.nota = nota
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'usuario_id': self.usuario_id,
+            'fecha_pedido': self.fecha_pedido,
+            'estado': self.estado,
+            'total': self.total,
+            'direccion_envio': self.direccion_envio,
+            'nota': self.nota
+        }
