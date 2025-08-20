@@ -24,4 +24,7 @@ class DataBaseConfig:
         return self.cursor.fetchall()
     
     def close(self): # Cerrar la conexión y el cursor
-        self.cursor.close()
+        if self.cursor:
+            self.cursor.close()
+        if self.conn:
+            self.conn.close()
